@@ -16,7 +16,7 @@ pub fn write_image(
 
     let encoder = PngEncoder::new(output);
     encoder.write_image(
-        &pixels,
+        pixels,
         bounds.0 as u32,
         bounds.1 as u32,
         ExtendedColorType::L8,

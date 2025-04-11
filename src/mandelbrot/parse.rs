@@ -24,10 +24,7 @@ pub fn parse_pair<T: FromStr>(s: &str, separator: char) -> Option<(T, T)> {
 /// Parse a pair of floating-point numbers separated by a comma as a complex
 /// number.
 pub fn parse_complex(s: &str) -> Option<Complex<f64>> {
-    match parse_pair(s, ',') {
-        Some((re, im)) => Some(Complex { re, im }),
-        None => None,
-    }
+    parse_pair(s, ',').map(|(re, im)| Complex { re, im })
 }
 
 #[test]
